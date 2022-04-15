@@ -12,7 +12,28 @@ export const Calc: React.FC = () => {
   console.log("result" + " " + result);
 
   const onSum = () => {
+    setNumber1(0);
+    setNumber2(0);
+    setResult(0);
     setResult(number1 + number2);
+  };
+  const onSub = () => {
+    setNumber1(0);
+    setNumber2(0);
+    setResult(0);
+    setResult(number1 - number2);
+  };
+  const onDiv = () => {
+    setNumber1(0);
+    setNumber2(0);
+    setResult(0);
+    setResult(number1 / number2);
+  };
+  const onMult = () => {
+    setNumber1(0);
+    setNumber2(0);
+    setResult(0);
+    setResult(number1 * number2);
   };
   const onClear = () => {
     setNumber1(0);
@@ -41,7 +62,9 @@ export const Calc: React.FC = () => {
               <strong>AC</strong>
             </Text>
           </Button>
-          <Button style={styles.endDigit}>/</Button>
+          <Button style={styles.endDigit} onPress={onDiv}>
+            /
+          </Button>
         </Box>
         <Box style={styles.columnDigits}>
           <Button
@@ -74,7 +97,9 @@ export const Calc: React.FC = () => {
               <strong>9</strong>
             </Text>
           </Button>
-          <Button style={styles.endDigit}>*</Button>
+          <Button style={styles.endDigit} onPress={onMult}>
+            *
+          </Button>
         </Box>
         <Box style={styles.columnDigits}>
           <Button
@@ -107,7 +132,9 @@ export const Calc: React.FC = () => {
               <strong>6</strong>
             </Text>
           </Button>
-          <Button style={styles.endDigit}>-</Button>
+          <Button style={styles.endDigit} onPress={onSub}>
+            -
+          </Button>
         </Box>
         <Box style={styles.columnDigits}>
           <Button
