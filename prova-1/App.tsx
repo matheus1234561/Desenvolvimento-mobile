@@ -1,13 +1,14 @@
-import { StyleSheet } from "react-native";
-import { NativeBaseProvider, Box } from "native-base";
+import { StyleSheet, View } from "react-native";
+import { NativeBaseProvider } from "native-base";
 import { Calc } from "./src/Components/Calc";
+import React from "react";
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Box style={styles.container}>
+      <View style={styles.container}>
         <Calc />
-      </Box>
+      </View>
     </NativeBaseProvider>
   );
 }
