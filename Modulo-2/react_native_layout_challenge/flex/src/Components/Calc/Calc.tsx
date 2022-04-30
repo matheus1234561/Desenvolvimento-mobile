@@ -3,38 +3,42 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 export const Calc: React.FC = () => {
-  const [result, setResult] = React.useState(0);
-  const [number1, setNumber1] = React.useState(0);
-  const [number2, setNumber2] = React.useState(0);
+  const [result, setResult] = React.useState("");
+  const [number1, setNumber1] = React.useState("");
+  const [number2, setNumber2] = React.useState("");
   const [operator, setOperator] = React.useState("");
 
   const onSum = () => {
-    setNumber1(0);
-    setNumber2(0);
-    setResult(0);
+    setNumber1("");
+    setNumber2("");
+    setResult("");
     setOperator("");
-    setResult(number1 + number2);
+    const resultSum = parseFloat(number1) + parseFloat(number2);
+    setResult(resultSum.toString());
   };
   const onSub = () => {
-    setNumber1(0);
-    setNumber2(0);
-    setResult(0);
+    setNumber1("");
+    setNumber2("");
+    setResult("");
     setOperator("");
-    setResult(number1 - number2);
+    const resultSub = parseFloat(number1) - parseFloat(number2);
+    setResult(resultSub.toString());
   };
   const onDiv = () => {
-    setNumber1(0);
-    setNumber2(0);
-    setResult(0);
+    setNumber1("");
+    setNumber2("");
+    setResult("");
     setOperator("");
-    setResult(number1 / number2);
+    const resultDiv = parseFloat(number1) / parseFloat(number2);
+    setResult(resultDiv.toString());
   };
   const onMult = () => {
-    setNumber1(0);
-    setNumber2(0);
-    setResult(0);
+    setNumber1("");
+    setNumber2("");
+    setResult("");
     setOperator("");
-    setResult(number1 * number2);
+    const resultMult = parseFloat(number1) * parseFloat(number2);
+    setResult(resultMult.toString());
   };
   const onResolve = () => {
     if (operator === "+") {
@@ -48,30 +52,30 @@ export const Calc: React.FC = () => {
     }
   };
   const onClear = () => {
-    setNumber1(0);
-    setNumber2(0);
-    setResult(0);
+    setNumber1("");
+    setNumber2("");
+    setResult("");
     setOperator("");
   };
   return (
     <View style={styles.container}>
       <View style={styles.displayResult}>
-        <View style={{ marginLeft: "94%" }}>
+        <View style={{ display: "flex", alignItems: "flex-end" }}>
           <Text style={{ color: "white", display: "flex" }}>
-            <Text display={number1 === 0 ? "none" : "flex"}>{number1}</Text>
+            <Text display={number1 === "0" ? "none" : "flex"}>{number1}</Text>
             <Text display={operator.length === 0 ? "none" : "flex"}>
               {operator}
             </Text>
-            <Text display={number2 === 0 ? "none" : "flex"}>{number2}</Text>
+            <Text display={number2 === "0" ? "none" : "flex"}>{number2}</Text>
           </Text>
           <Text
-            display={result === 0 ? "none" : "flex"}
+            display={result === "0" ? "none" : "flex"}
             style={{ color: "white" }}
           >
             {result}
           </Text>
           <Text
-            display={result === 0 ? "flex" : "none"}
+            display={result === "0" ? "flex" : "none"}
             style={{ color: "white" }}
           >
             0
@@ -110,7 +114,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(7) : setNumber2(7);
+              !operator
+                ? setNumber1((oldState) => `${oldState}7`)
+                : setNumber2((oldState) => `${oldState}7`);
             }}
           >
             <View>
@@ -120,7 +126,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(8) : setNumber2(8);
+              !operator
+                ? setNumber1((oldState) => `${oldState}8`)
+                : setNumber2((oldState) => `${oldState}8`);
             }}
           >
             <View>
@@ -130,7 +138,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(9) : setNumber2(9);
+              !operator
+                ? setNumber1((oldState) => `${oldState}9`)
+                : setNumber2((oldState) => `${oldState}9`);
             }}
           >
             <View>
@@ -152,7 +162,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(4) : setNumber2(4);
+              !operator
+                ? setNumber1((oldState) => `${oldState}4`)
+                : setNumber2((oldState) => `${oldState}4`);
             }}
           >
             <View>
@@ -162,7 +174,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(5) : setNumber2(5);
+              !operator
+                ? setNumber1((oldState) => `${oldState}5`)
+                : setNumber2((oldState) => `${oldState}5`);
             }}
           >
             <View>
@@ -172,7 +186,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(6) : setNumber2(6);
+              !operator
+                ? setNumber1((oldState) => `${oldState}6`)
+                : setNumber2((oldState) => `${oldState}6`);
             }}
           >
             <View>
@@ -194,7 +210,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(1) : setNumber2(1);
+              !operator
+                ? setNumber1((oldState) => `${oldState}1`)
+                : setNumber2((oldState) => `${oldState}1`);
             }}
           >
             <View>
@@ -204,7 +222,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(2) : setNumber2(2);
+              !operator
+                ? setNumber1((oldState) => `${oldState}2`)
+                : setNumber2((oldState) => `${oldState}2`);
             }}
           >
             <View>
@@ -214,7 +234,9 @@ export const Calc: React.FC = () => {
           <Button
             style={styles.digit}
             onPress={() => {
-              !operator ? setNumber1(3) : setNumber2(3);
+              !operator
+                ? setNumber1((oldState) => `${oldState}3`)
+                : setNumber2((oldState) => `${oldState}3`);
             }}
           >
             <View>
