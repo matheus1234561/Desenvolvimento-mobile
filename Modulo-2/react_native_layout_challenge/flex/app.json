@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "prova-1",
-    "slug": "prova-1",
+    "name": "Módulo-2_Lista1",
+    "slug": "Módulo-2_Lista1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

@@ -96,7 +96,7 @@ export const Calc: React.FC = () => {
             onPress={onClear}
           >
             <View>
-              <Text>AC</Text>
+              <Text style={styles.digitStyle}>AC</Text>
             </View>
           </Button>
           <Button
@@ -106,7 +106,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>/</Text>
+              <Text style={styles.operatorStyle}>/</Text>
             </View>
           </Button>
         </View>
@@ -120,7 +120,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>7</Text>
+              <Text style={styles.digitStyle}>7</Text>
             </View>
           </Button>
           <Button
@@ -132,7 +132,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>8</Text>
+              <Text style={styles.digitStyle}>8</Text>
             </View>
           </Button>
           <Button
@@ -144,7 +144,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>9</Text>
+              <Text style={styles.digitStyle}>9</Text>
             </View>
           </Button>
           <Button
@@ -154,7 +154,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>*</Text>
+              <Text style={styles.operatorStyle}>*</Text>
             </View>
           </Button>
         </View>
@@ -168,7 +168,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>4</Text>
+              <Text style={styles.digitStyle}>4</Text>
             </View>
           </Button>
           <Button
@@ -180,7 +180,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>5</Text>
+              <Text style={styles.digitStyle}>5</Text>
             </View>
           </Button>
           <Button
@@ -192,7 +192,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>6</Text>
+              <Text style={styles.digitStyle}>6</Text>
             </View>
           </Button>
           <Button
@@ -202,7 +202,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>-</Text>
+              <Text style={styles.operatorStyle}>-</Text>
             </View>
           </Button>
         </View>
@@ -216,7 +216,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>1</Text>
+              <Text style={styles.digitStyle}>1</Text>
             </View>
           </Button>
           <Button
@@ -228,7 +228,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>2</Text>
+              <Text style={styles.digitStyle}>2</Text>
             </View>
           </Button>
           <Button
@@ -240,7 +240,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>3</Text>
+              <Text style={styles.digitStyle}>3</Text>
             </View>
           </Button>
           <Button
@@ -250,7 +250,7 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>+</Text>
+              <Text style={styles.operatorStyle}>+</Text>
             </View>
           </Button>
         </View>
@@ -266,17 +266,17 @@ export const Calc: React.FC = () => {
             }}
           >
             <View>
-              <Text>0</Text>
+              <Text style={styles.digitStyle}>0</Text>
             </View>
           </Button>
           <Button style={styles.digit}>
             <View>
-              <Text>.</Text>
+              <Text style={styles.digitStyle}>.</Text>
             </View>
           </Button>
           <Button style={styles.endDigit} onPress={onResolve}>
             <View>
-              <Text>=</Text>
+              <Text style={styles.operatorStyle}>=</Text>
             </View>
           </Button>
         </View>
@@ -308,6 +308,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flex: 1,
   },
+  digitStyle: { fontSize: 16, fontWeight: "700" },
+  operatorStyle: { fontSize: 16, fontWeight: "700", color: "white" },
   digit: {
     width: "25%",
     height: "100%",
